@@ -1,0 +1,16 @@
+{
+  "name": "@sosarchel-live2dviewerex/spinets",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "compile": "powershell scripts/compile"
+  },
+  "author": "zwa73",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@zwa73/utils": "^1.0.234",
+    "pathe": "^1.1.2",
+    "pngjs": "^7.0.0"
+  }
+}
