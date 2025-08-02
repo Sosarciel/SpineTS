@@ -1,6 +1,6 @@
 {
 	"name": "@sosarciel-live2dviewerex/spine-ts",
-	"version": "1.0.3",
+	"version": "1.0.6",
 	"main": "index.js",
 	"scripts": {
 		"build": "powershell scripts/build",
@@ -9,6 +9,13 @@
 	"author": "zwa73",
 	"license": "ISC",
 	"description": "",
+	"files": [
+		"dist",
+		"data",
+		"schema",
+		"index.js",
+		"index.d.ts"
+	],
 	"dependencies": {
 		"@zwa73/utils": "^1.0.234",
 		"pathe": "^1.1.2",

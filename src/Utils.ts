@@ -2,7 +2,7 @@ import * as fs from 'fs';
 import { PNG } from 'pngjs';
 import { SpineBone, SpineSkin } from './SpineBase';
 import { deepClone } from '@zwa73/utils';
-import { StringIdSpineSkin } from './SpineTS';
+import { StringIdSpineSkin } from './DataTable';
 
 /**将预乘 alpha 的图像转换为非预乘 alpha 的图像
  * @param filePath - 输入图像的文件路径
