@@ -102,7 +102,7 @@ export type SpineSlot = {
     bone: BoneID;
     /**RGBA颜色 RRGGBBAA */
     color?:string;
-    attachment?: AttaID;
+    attachment?: AttaID|null;
 }
 
 /**Spine的json输出格式 */
@@ -139,7 +139,7 @@ export type SpineJson = {
             slots?: {
                 [slot_id: SlotID]: {
                     color?: {
-                        time: number;
+                        time?: number;
                         color: string;
                         curve: number;
                         c2: number;
@@ -147,26 +147,26 @@ export type SpineJson = {
                         c4: number;
                     }[];
                     attachment?: {
-                        time: number;
-                        name: AttaID;
+                        time?: number;
+                        name: AttaID|null;
                     }[];
                 };
             };
             bones?: {
                 [bone_id:BoneID]: {
                     rotate?: {
-                        time: number;
+                        time?: number;
                         angle: number;
                         curve: number;
                         c3: number;
                     }[];
                     scale?:{
-                        time: number;
+                        time?: number;
                         x: number;
                         y: number;
                     }[];
                     translate?:{
-                        time: number;
+                        time?: number;
                         x: number;
                         y: number;
                     }[];
@@ -180,7 +180,7 @@ export type SpineJson = {
                             c3: number;
                             vertices:number[];
                             offset:number;
-                            time:number;
+                            time?:number;
                         }[]
                     }
                 }
@@ -199,7 +199,7 @@ export type SpineJson = {
                 shearMix:number;
             }[]>;
             path?:Record<PathID,{
-                    position: {time: number, position: number}[];
+                    position: {time?: number, position: number}[];
             }>
         };
     };

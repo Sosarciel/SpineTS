@@ -403,7 +403,7 @@ export class SpineData implements IJData{
      */
     replaceAttaID(func: (id: string) => string) {
         const json = this._table;
-        const fixfunc = (id:string)=>{
+        const fixfunc = (id:string|null)=>{
             if(id==null) return id;
             return func(id);
         }
@@ -416,8 +416,8 @@ export class SpineData implements IJData{
             Object.entries(skin.attachments).forEach(([k,v]) => {
                 const newAtta: typeof v = {};
                 Object.entries(v).forEach(([attaID, attachment]) => {
-                    if('path' in attachment) attachment.path = fixfunc(attachment.path);
-                    newAtta[fixfunc(attaID)] = attachment;
+                    if('path' in attachment) attachment.path = fixfunc(attachment.path)!;
+                    newAtta[fixfunc(attaID)!] = attachment;
                 });
                 skin.attachments[k] = newAtta;
             });
@@ -437,7 +437,7 @@ export class SpineData implements IJData{
                         Object.entries(deform).forEach(([k,atta]) => {
                             const newAtta: typeof atta = {};
                             Object.entries(atta).forEach(([attaID, attachment]) => {
-                                newAtta[fixfunc(attaID)] = attachment;
+                                newAtta[fixfunc(attaID)!] = attachment;
                             });
                             deform[k] = newAtta;
                         });
